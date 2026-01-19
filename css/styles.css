@@ -10,10 +10,11 @@
    ======================================== */
 :root {
     /* Colors */
-    --color-primary: #FF6B35;
-    /* Vibrant Orange */
-    --color-primary-dark: #E5522A;
-    --color-primary-light: #FF8555;
+    /* Colors */
+    --color-primary: #0066FF;
+    /* Electric Blue */
+    --color-primary-dark: #0047b3;
+    --color-primary-light: #4d94ff;
 
     --color-secondary: #0A1929;
     /* Deep Navy */

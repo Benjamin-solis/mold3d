@@ -168,7 +168,7 @@ function renderCartItems() {
                 <div class="cart-empty-icon">🛒</div>
                 <h3>Tu carrito está vacío</h3>
                 <p class="card-text">Agrega productos desde nuestro catálogo</p>
-                <a href="#products" class="btn btn-primary mt-3">Ver Productos</a>
+                <a href="products.html" class="btn btn-primary mt-3">Ver Productos</a>
             </div>
         `;
         return;
