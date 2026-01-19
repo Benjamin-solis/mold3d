@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>MOLD3D.cl - Soluciones Profesionales en Impresión 3D</title>
+    <meta name="description" content="Impresión 3D profesional en Chile. Prototipos, miniaturas, repuestos personalizados y más. Calidad, rapidez y precisión en cada proyecto.">
+    <meta name="keywords" content="impresión 3D, prototipos, miniaturas, Chile, manufactura aditiva, diseño 3D">
+    <meta name="author" content="MOLD3D">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mold3d.cl/">
+    <meta property="og:title" content="MOLD3D.cl - Soluciones en Impresión 3D">
+    <meta property="og:description" content="Impresión 3D profesional. Prototipos, miniaturas y productos personalizados.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="MOLD3D.cl - Impresión 3D Profesional">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔷</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="logo">
+                MOLD<span>3D</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Inicio</a></li>
+                <li><a href="#products" class="nav-link">Productos</a></li>
+                <li><a href="#about" class="nav-link">Nosotros</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+                <li class="cart-badge">
+                    <a href="#cart" class="nav-link">
+                        🛒 Carrito
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+        <img src="assets/images/hero-bg.png" alt="Impresión 3D" class="hero-bg">
+        <div class="hero-content container">
+            <h1 class="hero-title">
+                Soluciones en <span class="text-gradient">Impresión 3D</span> a Medida
+            </h1>
+            <p class="hero-subtitle">
+                Transformamos tus ideas en realidad con tecnología de manufactura aditiva de última generación
+            </p>
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-primary">Ver Productos</a>
+                <a href="#contact" class="btn btn-outline">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services" style="background: var(--color-secondary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por qué elegir MOLD3D?</h2>
+                <p>Calidad, precisión y compromiso en cada proyecto</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="card reveal">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">Entrega Rápida</h3>
+                    <p class="card-text">
+                        Tiempos de producción optimizados sin comprometer la calidad. Tu proyecto listo cuando lo necesites.
+                    </p>
+                </div>
+                
+                <div class="card reveal">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="card-title">Alta Precisión</h3>
+                    <p class="card-text">
+                        Tecnología de impresión 3D de última generación para detalles perfectos en cada pieza.
+                    </p>
+                </div>
+                
+                <div class="card reveal">
+                    <div class="card-icon">🔧</div>
+                    <h3 class="card-title">100% Personalizado</h3>
+                    <p class="card-text">
+                        Cada proyecto es único. Trabajamos contigo para crear exactamente lo que necesitas.
+                    </p>
+                </div>
+                
+                <div class="card reveal">
+                    <div class="card-icon">💎</div>
+                    <h3 class="card-title">Calidad Premium</h3>
+                    <p class="card-text">
+                        Materiales de primera calidad y acabados profesionales en todos nuestros productos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Productos</h2>
+                <p>Explora nuestro catálogo de soluciones en impresión 3D</p>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Section -->
+    <section class="section hidden" id="cart">
+        <div class="container cart-container">
+            <div class="section-title">
+                <h2>Carrito de Compras</h2>
+            </div>
+            
+            <div id="cartContent">
+                <!-- Cart items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about" style="background: var(--color-secondary);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre MOLD3D</h2>
+                <p>Innovación y tecnología al servicio de tus proyectos</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card reveal">
+                    <h3 class="card-title">¿Quiénes Somos?</h3>
+                    <p class="card-text mb-2">
+                        MOLD3D es una empresa chilena especializada en manufactura aditiva y soluciones de impresión 3D. 
+                        Combinamos tecnología de punta con experiencia técnica para ofrecer productos y servicios de la más alta calidad.
+                    </p>
+                    <p class="card-text mb-2">
+                        Nuestro equipo está formado por profesionales apasionados por la innovación y el diseño, 
+                        comprometidos con transformar ideas en objetos tangibles con precisión y eficiencia.
+                    </p>
+                    <p class="card-text">
+                        Trabajamos con diversos sectores: desde ingeniería y arquitectura hasta arte y diseño, 
+                        ofreciendo soluciones personalizadas para cada necesidad.
+                    </p>
+                </div>
+                
+                <div class="card reveal mt-3">
+                    <h3 class="card-title">Nuestra Misión</h3>
+                    <p class="card-text">
+                        Democratizar el acceso a la tecnología de impresión 3D, proporcionando soluciones 
+                        profesionales, accesibles y de alta calidad que impulsen la innovación y creatividad 
+                        de nuestros clientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>Estamos aquí para ayudarte con tu proyecto</p>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="card reveal">
+                    <h3 class="card-title mb-3">¿Tienes un proyecto en mente?</h3>
+                    <p class="card-text mb-3">
+                        Contáctanos directamente por WhatsApp y cuéntanos sobre tu proyecto. 
+                        Te responderemos a la brevedad con una cotización personalizada.
+                    </p>
+                    
+                    <a href="https://wa.me/56973023478?text=Hola%20MOLD3D,%20me%20gustaría%20consultar%20sobre%20sus%20servicios%20de%20impresión%203D" 
+                       class="btn btn-whatsapp btn-lg" 
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        📱 Contactar por WhatsApp
+                    </a>
+                    
+                    <div class="mt-4">
+                        <p class="card-text">
+                            <strong>Email:</strong> contacto@mold3d.cl<br>
+                            <strong>Teléfono:</strong> +56 9 7302 3478
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card reveal mt-3">
+                    <h4 class="card-title mb-2">Síguenos en Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MOLD<span style="color: var(--color-primary);">3D</span></h4>
+                    <p class="card-text">
+                        Soluciones profesionales en impresión 3D. 
+                        Transformamos ideas en realidad.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <div class="footer-links">
+                        <a href="#home" class="footer-link">Inicio</a>
+                        <a href="#products" class="footer-link">Productos</a>
+                        <a href="#about" class="footer-link">Nosotros</a>
+                        <a href="#contact" class="footer-link">Contacto</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="footer-links">
+                        <a href="mailto:contacto@mold3d.cl" class="footer-link">contacto@mold3d.cl</a>
+                        <a href="tel:+56973023478" class="footer-link">+56 9 7302 3478</a>
+                        <a href="https://wa.me/56973023478" class="footer-link" target="_blank">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 MOLD3D.cl - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+[
+    {
+        "id": "prod-001",
+        "name": "Miniaturas Personalizadas",
+        "description": "Figuras y miniaturas 3D personalizadas de alta calidad. Perfectas para coleccionistas, juegos de mesa o regalos únicos.",
+        "price": 15990,
+        "image": "assets/images/product-1.png",
+        "category": "Miniaturas",
+        "variants": [
+            {
+                "name": "Color",
+                "options": [
+                    "Negro",
+                    "Blanco",
+                    "Naranja",
+                    "Azul",
+                    "Gris"
+                ]
+            },
+            {
+                "name": "Material",
+                "options": [
+                    "PLA",
+                    "ABS",
+                    "PETG"
+                ]
+            },
+            {
+                "name": "Tamaño",
+                "options": [
+                    "Pequeño (5cm)",
+                    "Mediano (10cm)",
+                    "Grande (15cm)"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "prod-002",
+        "name": "Prototipos Industriales",
+        "description": "Prototipos funcionales para ingeniería y diseño industrial. Precisión y resistencia para tus proyectos profesionales.",
+        "price": 29990,
+        "image": "assets/images/product-2.png",
+        "category": "Prototipos",
+        "variants": [
+            {
+                "name": "Material",
+                "options": [
+                    "ABS",
+                    "PETG",
+                    "Nylon",
+                    "TPU"
+                ]
+            },
+            {
+                "name": "Acabado",
+                "options": [
+                    "Estándar",
+                    "Lijado",
+                    "Premium"
+                ]
+            },
+            {
+                "name": "Tamaño",
+                "options": [
+                    "Pequeño",
+                    "Mediano",
+                    "Grande",
+                    "Extra Grande"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "prod-003",
+        "name": "Objetos Decorativos",
+        "description": "Diseños geométricos y artísticos modernos para decoración de interiores. Dale un toque único a tu espacio.",
+        "price": 12990,
+        "image": "assets/images/product-3.png",
+        "category": "Decoración",
+        "variants": [
+            {
+                "name": "Color",
+                "options": [
+                    "Naranja Translúcido",
+                    "Negro Mate",
+                    "Blanco Brillante",
+                    "Azul Metálico"
+                ]
+            },
+            {
+                "name": "Material",
+                "options": [
+                    "PETG",
+                    "PLA",
+                    "ABS"
+                ]
+            },
+            {
+                "name": "Tamaño",
+                "options": [
+                    "10cm",
+                    "15cm",
+                    "20cm"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "prod-004",
+        "name": "Repuestos a Medida",
+        "description": "Fabricación de repuestos y piezas personalizadas. Solución perfecta para piezas descontinuadas o difíciles de encontrar.",
+        "price": 8990,
+        "image": "assets/images/product-2.png",
+        "category": "Repuestos",
+        "variants": [
+            {
+                "name": "Material",
+                "options": [
+                    "ABS",
+                    "PETG",
+                    "Nylon"
+                ]
+            },
+            {
+                "name": "Complejidad",
+                "options": [
+                    "Simple",
+                    "Media",
+                    "Compleja"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "prod-005",
+        "name": "Herramientas Personalizadas",
+        "description": "Herramientas y accesorios diseñados específicamente para tus necesidades. Ergonómicas y funcionales.",
+        "price": 18990,
+        "image": "assets/images/product-3.png",
+        "category": "Herramientas",
+        "variants": [
+            {
+                "name": "Material",
+                "options": [
+                    "ABS",
+                    "PETG",
+                    "TPU",
+                    "Nylon"
+                ]
+            },
+            {
+                "name": "Color",
+                "options": [
+                    "Negro",
+                    "Gris",
+                    "Naranja",
+                    "Azul"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "prod-006",
+        "name": "Maquetas Arquitectónicas",
+        "description": "Maquetas detalladas para proyectos arquitectónicos y presentaciones profesionales. Alta precisión y acabado.",
+        "price": 35990,
+        "image": "assets/images/product-1.png",
+        "category": "Maquetas",
+        "variants": [
+            {
+                "name": "Escala",
+                "options": [
+                    "1:100",
+                    "1:50",
+                    "1:25"
+                ]
+            },
+            {
+                "name": "Material",
+                "options": [
+                    "PLA",
+                    "ABS"
+                ]
+            },
+            {
+                "name": "Acabado",
+                "options": [
+                    "Estándar",
+                    "Pintado",
+                    "Premium"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "prod-007",
+        "name": "Soportes para Celular",
+        "description": "Soportes ergonómicos y personalizables para tu smartphone. Diseño moderno y funcional para escritorio o auto.",
+        "price": 6990,
+        "image": "assets/images/product-3.png",
+        "category": "Accesorios",
+        "variants": [
+            {
+                "name": "Tipo",
+                "options": [
+                    "Escritorio",
+                    "Auto",
+                    "Universal"
+                ]
+            },
+            {
+                "name": "Color",
+                "options": [
+                    "Negro",
+                    "Blanco",
+                    "Naranja",
+                    "Gris"
+                ]
+            },
+            {
+                "name": "Material",
+                "options": [
+                    "PLA",
+                    "PETG"
+                ]
+            }
+        ]
+    }
+]
