@@ -41,7 +41,7 @@
 
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Inicio</a></li>
-                <li><a href="#products" class="nav-link">Productos</a></li>
+                <li><a href="products.html" class="nav-link">Productos</a></li>
                 <li><a href="#about" class="nav-link">Nosotros</a></li>
                 <li><a href="#contact" class="nav-link">Contacto</a></li>
             </ul>
@@ -55,7 +55,7 @@
     </header>
 
     <!-- Floating Cart Button -->
-    <a href="#cart" class="floating-cart" id="floatingCart">
+    <a href="cart.html" class="floating-cart" id="floatingCart">
         <div class="floating-cart-icon">🛒</div>
         <span class="cart-count-display floating-cart-count">0</span>
     </a>
@@ -71,7 +71,7 @@
                 Transformamos tus ideas en realidad con tecnología de manufactura aditiva de última generación
             </p>
             <div class="hero-cta">
-                <a href="#products" class="btn btn-primary">Ver Productos</a>
+                <a href="products.html" class="btn btn-primary">Ver Productos</a>
                 <a href="#contact" class="btn btn-outline">Contactar</a>
             </div>
         </div>
@@ -118,33 +118,6 @@
                         Materiales de primera calidad y acabados profesionales en todos nuestros productos.
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="section" id="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nuestros Productos</h2>
-                <p>Explora nuestro catálogo de soluciones en impresión 3D</p>
-            </div>
-
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Shopping Cart Section -->
-    <section class="section hidden" id="cart">
-        <div class="container cart-container">
-            <div class="section-title">
-                <h2>Carrito de Compras</h2>
-            </div>
-
-            <div id="cartContent">
-                <!-- Cart items will be loaded dynamically -->
             </div>
         </div>
     </section>
@@ -245,7 +218,7 @@
                     <h4>Enlaces Rápidos</h4>
                     <div class="footer-links">
                         <a href="#home" class="footer-link">Inicio</a>
-                        <a href="#products" class="footer-link">Productos</a>
+                        <a href="products.html" class="footer-link">Productos</a>
                         <a href="#about" class="footer-link">Nosotros</a>
                         <a href="#contact" class="footer-link">Contacto</a>
                     </div>
@@ -269,7 +242,10 @@
 
     <!-- JavaScript -->
     <script src="js/app.js"></script>
-    <script src="js/products.js"></script>
+    <script>
+        // Disable products.js loading on home page
+        // Only cart.js is needed for the floating button count
+    </script>
     <script src="js/cart.js"></script>
 </body>
 

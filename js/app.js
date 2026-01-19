@@ -10,66 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
-// Navigation & Routing
+// Navigation
 // ========================================
 function initNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
-    // Handle navigation clicks
+    // Handle anchor navigation clicks
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
-
-            // Update active link
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-
-            // Show/hide sections
-            if (targetId === 'cart') {
-                showCartSection();
-            } else {
-                hideCartSection();
-                scrollToSection(targetId);
-            }
-
-            // Close mobile menu
+            scrollToSection(targetId);
             closeMobileMenu();
         });
     });
 
-    // Handle floating cart click
-    const floatingCart = document.getElementById('floatingCart');
-    if (floatingCart) {
-        floatingCart.addEventListener('click', (e) => {
-            e.preventDefault();
-            showCartSection();
-        });
-    }
-
-    // Scroll spy for active navigation
-    window.addEventListener('scroll', () => {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        if (current && current !== 'cart') {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
+    // Handle floating cart click (if on the same page, although now it's a link to cart.html)
+    // We keep this just in case we want to intercept clicks, but standard link behavior is fine now.
 }
 
 function scrollToSection(sectionId) {
