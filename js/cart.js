@@ -144,6 +144,14 @@ function updateCartBadge() {
         el.textContent = itemCount;
         el.style.display = itemCount > 0 ? 'flex' : 'none';
     });
+
+    // Animate floating cart
+    const floatingCart = document.querySelector('.floating-cart');
+    if (floatingCart) {
+        floatingCart.classList.remove('pop');
+        void floatingCart.offsetWidth; // Trigger reflow
+        floatingCart.classList.add('pop');
+    }
 }
 
 // ========================================

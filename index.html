@@ -44,19 +44,7 @@
                 <li><a href="#products" class="nav-link">Productos</a></li>
                 <li><a href="#about" class="nav-link">Nosotros</a></li>
                 <li><a href="#contact" class="nav-link">Contacto</a></li>
-                <li class="cart-badge">
-                    <a href="#cart" class="nav-link">
-                        🛒 Carrito
-                        <span class="cart-count cart-count-display">0</span>
-                    </a>
-                </li>
             </ul>
-
-            <!-- Mobile Cart Button -->
-            <a href="#cart" class="mobile-cart-btn nav-link" style="margin-left: auto; margin-right: 15px;">
-                🛒
-                <span class="cart-count cart-count-display" style="top: -5px; right: -5px;">0</span>
-            </a>
 
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                 <span></span>
@@ -65,6 +53,12 @@
             </button>
         </nav>
     </header>
+
+    <!-- Floating Cart Button -->
+    <a href="#cart" class="floating-cart" id="floatingCart">
+        <div class="floating-cart-icon">🛒</div>
+        <span class="cart-count-display floating-cart-count">0</span>
+    </a>
 
     <!-- Hero Section -->
     <section class="hero section" id="home">
