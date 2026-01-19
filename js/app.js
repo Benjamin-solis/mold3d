@@ -39,6 +39,15 @@ function initNavigation() {
         });
     });
 
+    // Handle floating cart click
+    const floatingCart = document.getElementById('floatingCart');
+    if (floatingCart) {
+        floatingCart.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCartSection();
+        });
+    }
+
     // Scroll spy for active navigation
     window.addEventListener('scroll', () => {
         let current = '';
