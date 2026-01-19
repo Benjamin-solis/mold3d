@@ -137,13 +137,13 @@ function updateCartDisplay() {
 // Update Cart Badge
 // ========================================
 function updateCartBadge() {
-    const cartCount = document.getElementById('cartCount');
+    const cartCounts = document.querySelectorAll('.cart-count-display');
     const itemCount = getCartItemCount();
 
-    if (cartCount) {
-        cartCount.textContent = itemCount;
-        cartCount.style.display = itemCount > 0 ? 'flex' : 'none';
-    }
+    cartCounts.forEach(el => {
+        el.textContent = itemCount;
+        el.style.display = itemCount > 0 ? 'flex' : 'none';
+    });
 }
 
 // ========================================
