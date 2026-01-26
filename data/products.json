@@ -1,11 +1,12 @@
 [
     {
         "id": "prod-001",
-        "name": "Lampara de mesa Potolina",
-        "description": "Lámpara tipo hongo impresa en 3D, de diseño moderno y minimalista. Ideal para crear una luz cálida y acogedora en cualquier espacio.",
-        "price": 15990,
-        "image": "assets/images/01.jpeg",
-        "category": "Miniaturas",
+        "name": "Soporte para teléfono-01",
+        "description": "Soporte genérico para teléfono ideal para escritorio, videollamadas o ver contenido. Estable, minimalista y diseñado para cargar el equipo sin doblar el cable.",
+        "price": 1290,
+        "image": "assets/images/Soporte para teléfono-01.png",
+        "category": "Oficina",
+        "subCategory": "Soporte para teléfono",
         "variants": [
             {
                 "name": "Color",
@@ -16,53 +17,80 @@
                     "Blanco",
                     "Negro"
                 ]
-            },
-            {
-                "name": "Material",
-                "options": [
-                    "PLA"
-                ]
-            },
-            {
-                "name": "Tamaño",
-                "options": [
-                    "Grande (25cm)"
-                ]
             }
         ]
     },
     {
         "id": "prod-002",
-        "name": "Prototipos Industriales",
-        "description": "Prototipos funcionales para ingeniería y diseño industrial. Precisión y resistencia para tus proyectos profesionales.",
-        "price": 29990,
-        "image": "assets/images/product-2.png",
-        "category": "Prototipos",
+        "name": "Organizador de Escritorio Modular",
+        "description": "Organizador de escritorio moderno y totalmente modular, diseñado para adaptarse a tu espacio y forma de trabajar. Con más de 20 cm de largo, ofrece gran capacidad y un diseño limpio ideal para oficina, estudio o setup creativo.",
+        "price": 11900,
+        "image": "assets/images/0001.png",
+        "image2": "assets/images/0002.png",
+        "image3": "assets/images/0003.png",
+        "category": "Oficina",
         "variants": [
             {
-                "name": "Material",
+                "name": "Bandeja larga",
                 "options": [
-                    "ABS",
-                    "PETG",
-                    "Nylon",
-                    "TPU"
+                    "Default",
+                    "Opcion A",
+                    "Opcion B",
+                    "Opcion C",
+                    "Opcion D",
+                    "Opcion E"
                 ]
             },
             {
-                "name": "Acabado",
+                "name": "Bandeja lapiz",
                 "options": [
-                    "Estándar",
-                    "Lijado",
-                    "Premium"
+                    "Default",
+                    "Opcion A",
+                    "Opcion B",
+                    "Opcion C"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "id": "prod-003",
+        "name": "Sistema Organizador Modular de Escritorio",
+        "description": "Organizador de escritorio modular diseñado para adaptarse a tu espacio y estilo de trabajo. Permite reorganizar sus módulos para mantener tu escritorio ordenado, funcional y visualmente limpio.",
+        "price": 6590,
+        "image": "assets/images/004.png",
+        "image2": "assets/images/005.png",
+        "image3": "assets/images/006.png",
+        "category": "Oficina",
+        "variants": [
             {
-                "name": "Tamaño",
+                "name": "Formato",
                 "options": [
-                    "Pequeño",
-                    "Mediano",
-                    "Grande",
-                    "Extra Grande"
+                    "Organizador de Escritorio (Set Estándar)",
+                    "Organizador de Escritorio (Organizador + Soporte para teléfono)",
+                    "Solo soporte para teléfono"
+                ]
+            }
+        ],
+        "variantPrices": {
+            "Organizador de Escritorio (Set Estándar)": 6590,
+            "Organizador de Escritorio (Organizador + Soporte para teléfono)": 8790,
+            "Solo soporte para teléfono": 2200
+        }
+    },
+    {
+        "id": "prod-005",
+        "name": "Portalápices-01",
+        "description": "Portalápices de diseño moderno.",
+        "price": 12990,
+        "image": "assets/images/portalapices01.png",
+        "category": "Oficina",
+        "subCategory": "Portalápices",
+        "variants": [
+            {
+                "name": "Color",
+                "options": [
+                    "Blanco",
+                    "Rojo"
                 ]
             }
         ]

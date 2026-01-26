@@ -3,18 +3,24 @@
 // ========================================
 
 let productsData = [];
+let currentCategory = 'Todos';
+let currentSubCategory = 'Todos';
 
 // ========================================
 // Load Products from JSON
 // ========================================
 async function loadProducts() {
     try {
-        const response = await fetch('data/products.json');
+        // Add timestamp to prevent caching
+        const response = await fetch(`data/products.json?v=${new Date().getTime()}`);
         if (!response.ok) {
             throw new Error('Failed to load products');
         }
 
         productsData = await response.json();
+        renderCategoryFilters(productsData);
+        // Initially hide subcategories or render if needed (usually hidden for 'Todos')
+        renderSubCategoryFilters(productsData);
         renderProducts(productsData);
 
         console.log(`✅ Loaded ${productsData.length} products`);
@@ -30,21 +36,34 @@ async function loadProducts() {
 function renderProducts(products) {
     const productsGrid = document.getElementById('productsGrid');
 
-    if (!products || products.length === 0) {
+    // Filter products based on current category and subcategory
+    let filteredProducts = products;
+
+    // 1. Filter by Main Category
+    if (currentCategory !== 'Todos') {
+        filteredProducts = filteredProducts.filter(p => p.category === currentCategory);
+    }
+
+    // 2. Filter by SubCategory (only if not 'Todos')
+    if (currentSubCategory !== 'Todos') {
+        filteredProducts = filteredProducts.filter(p => p.subCategory === currentSubCategory);
+    }
+
+    if (!filteredProducts || filteredProducts.length === 0) {
         productsGrid.innerHTML = `
             <div class="cart-empty">
                 <div class="cart-empty-icon">📦</div>
                 <h3>No hay productos disponibles</h3>
-                <p class="card-text">Estamos actualizando nuestro catálogo.</p>
+                <p class="card-text">Intenta con otra categoría.</p>
             </div>
         `;
         return;
     }
 
-    productsGrid.innerHTML = products.map(product => createProductCard(product)).join('');
+    productsGrid.innerHTML = filteredProducts.map(product => createProductCard(product)).join('');
 
     // Add event listeners to "Add to Cart" buttons
-    attachAddToCartListeners();
+    // attachAddToCartListeners(); // NOT NEEDED IN CATALOG ANYMORE
 
     // Re-initialize reveal animations for newly added products
     if (typeof window.revealElements === 'function') {
@@ -55,57 +74,35 @@ function renderProducts(products) {
 // ========================================
 // Create Product Card HTML
 // ========================================
+// ========================================
+// Create Product Card HTML (Simplified for Catalog)
+// ========================================
 function createProductCard(product) {
-    const variantsHTML = product.variants ? createVariantsHTML(product) : '';
+    // We only show the main image here.
+    // The carousel logic is moved to product-detail.js
 
     return `
-        <div class="product-card reveal" data-product-id="${product.id}">
+        <a href="product-detail.html?id=${product.id}" class="product-card reveal" data-product-id="${product.id}">
             <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
             
             <div class="product-info">
-                <span class="product-category">${product.category}</span>
+                <span class="product-category">
+                    ${product.category} ${product.subCategory ? '• ' + product.subCategory : ''}
+                </span>
                 <h3 class="product-name">${product.name}</h3>
-                <p class="product-description">${product.description}</p>
-                
-                ${variantsHTML}
                 
                 <div class="product-footer">
                     <span class="product-price">${formatPrice(product.price)}</span>
-                    <button class="btn btn-primary btn-add-cart" data-product-id="${product.id}">
-                        Agregar al Carrito
+                    <button class="btn btn-primary btn-sm">
+                        Ver Detalles
                     </button>
                 </div>
             </div>
-        </div>
+        </a>
     `;
 }
 
-// ========================================
-// Create Variants HTML
-// ========================================
-function createVariantsHTML(product) {
-    if (!product.variants || product.variants.length === 0) {
-        return '';
-    }
-
-    const variantsHTML = product.variants.map((variant, index) => {
-        const selectId = `variant-${product.id}-${index}`;
-        const optionsHTML = variant.options.map(option =>
-            `<option value="${option}">${option}</option>`
-        ).join('');
-
-        return `
-            <div class="variant-group">
-                <label class="variant-label" for="${selectId}">${variant.name}</label>
-                <select class="variant-select" id="${selectId}" data-variant-name="${variant.name}">
-                    ${optionsHTML}
-                </select>
-            </div>
-        `;
-    }).join('');
-
-    return `<div class="product-variants">${variantsHTML}</div>`;
-}
+// No variants or carousel logic needed here anymore
 
 // ========================================
 // Add to Cart Event Listeners
@@ -176,6 +173,110 @@ function showProductsError() {
     `;
 }
 
+// ========================================
+// Render Category Filters
+// ========================================
+function renderCategoryFilters(products) {
+    const filtersContainer = document.getElementById('categoryFilters');
+
+    // Extract unique categories
+    const categories = ['Todos', ...new Set(products.map(p => p.category))];
+
+    filtersContainer.innerHTML = categories.map(category => `
+        <button class="category-btn ${category === currentCategory ? 'active' : ''}" 
+                onclick="filterProducts('${category}')">
+            ${category}
+        </button>
+    `).join('');
+}
+
+// ========================================
+// Render SubCategory Filters
+// ========================================
+function renderSubCategoryFilters(products) {
+    const subFiltersContainer = document.getElementById('subCategoryFilters');
+
+    // If 'Todos' is selected for main category, we usually don't show subcategories
+    // OR we could show all subcategories. Let's hide them for simplicity unless a category is picked
+    // AND that category has subcategories.
+
+    // Logic: 
+    // 1. Get products for current category
+    const categoryProducts = currentCategory === 'Todos'
+        ? products
+        : products.filter(p => p.category === currentCategory);
+
+    // 2. Extract subcategories
+    const subCategories = [...new Set(categoryProducts
+        .map(p => p.subCategory)
+        .filter(sub => sub) // Remove undefined/null/empty
+    )];
+
+    // 3. If no subcategories found, hide container
+    if (subCategories.length === 0) {
+        subFiltersContainer.style.display = 'none';
+        subFiltersContainer.innerHTML = '';
+        return;
+    }
+
+    // 4. Show container and render buttons
+    subFiltersContainer.style.display = 'flex'; // or block/grid depending on CSS
+    const allSubCategories = ['Todos', ...subCategories];
+
+    subFiltersContainer.innerHTML = allSubCategories.map(subCat => `
+        <button class="subcategory-btn ${subCat === currentSubCategory ? 'active' : ''}" 
+                onclick="filterSubCategory('${subCat}')">
+            ${subCat}
+        </button>
+    `).join('');
+}
+
+// ========================================
+// Filter Products Action (Main Category)
+// ========================================
+function filterProducts(category) {
+    currentCategory = category;
+    currentSubCategory = 'Todos'; // Reset subcategory when changing main category
+
+    // Update active button state style for main categories
+    const buttons = document.querySelectorAll('.category-btn');
+    buttons.forEach(btn => {
+        if (btn.textContent.trim() === category) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Render Subcategories for the new main category
+    renderSubCategoryFilters(productsData);
+
+    // Re-render products
+    renderProducts(productsData);
+}
+
+// ========================================
+// Filter SubCategory Action
+// ========================================
+function filterSubCategory(subCategory) {
+    currentSubCategory = subCategory;
+
+    // Update active button state style for subcategories
+    const buttons = document.querySelectorAll('.subcategory-btn');
+    buttons.forEach(btn => {
+        if (btn.textContent.trim() === subCategory) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Re-render products
+    renderProducts(productsData);
+}
+
 // Export functions
 window.loadProducts = loadProducts;
 window.productsData = productsData;
+window.filterProducts = filterProducts;
+window.filterSubCategory = filterSubCategory;

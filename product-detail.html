@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags (Will be updated dynamically) -->
+    <title>MOLD3D.cl - Producto</title>
+    <meta name="description" content="Detalles del producto.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔷</text></svg>">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                MOLD<span>3D</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="products.html" class="nav-link active">Productos</a></li>
+                <li><a href="index.html#about" class="nav-link">Nosotros</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Floating Cart Button -->
+    <a href="cart.html" class="floating-cart" id="floatingCart">
+        <div class="floating-cart-icon">🛒</div>
+        <span class="cart-count-display floating-cart-count">0</span>
+    </a>
+
+    <!-- Spacer for fixed header -->
+    <div style="height: var(--header-height); background: var(--color-bg-dark);"></div>
+
+    <!-- Product Detail Section -->
+    <section class="section" id="productDetail">
+        <div class="container">
+            <a href="products.html" class="back-link">← Volver al Catálogo</a>
+
+            <div id="productDetailContainer" class="product-detail-container">
+                <!-- Loading State -->
+                <div class="loading-spinner">Cargando producto...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MOLD<span style="color: var(--color-primary);">3D</span></h4>
+                    <p class="card-text">
+                        Soluciones profesionales en impresión 3D.
+                        Transformamos ideas en realidad.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Inicio</a>
+                        <a href="products.html" class="footer-link">Productos</a>
+                        <a href="index.html#about" class="footer-link">Nosotros</a>
+                        <a href="index.html#contact" class="footer-link">Contacto</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="footer-links">
+                        <a href="mailto:contacto@mold3d.cl" class="footer-link">contacto@mold3d.cl</a>
+                        <a href="tel:+56973023478" class="footer-link">+56 9 7302 3478</a>
+                        <a href="https://wa.me/56973023478" class="footer-link" target="_blank">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 MOLD3D.cl - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/product-detail.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
