@@ -94,5 +94,65 @@
                 ]
             }
         ]
+    },
+    {
+        "id": "prod-006",
+        "name": "Soporte Moderno para Auriculares 01",
+        "description": "Soporte moderno para auriculares con diseño elegante y funcional.",
+        "price": 5190,
+        "image": "assets/images/a001.png",
+        "category": "Oficina",
+        "subCategory": "Soporte para auriculares",
+        "variants": [
+            {
+                "name": "Color",
+                "options": [
+                    "Blanco",
+                    "Rojo",
+                    "Negro",
+                    "Azul",
+                    "Verde"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "prod-007",
+        "name": "Contenedor de basura para oficina",
+        "description": "Contenedor de basura para oficina con diseño moderno y funcional.",
+        "price": 2290,
+        "image": "assets/images/a002.png",
+        "category": "Oficina",
+        "variants": [
+            {
+                "name": "Color tapa",
+                "options": [
+                    "Blanco",
+                    "Rojo",
+                    "Negro",
+                    "Azul",
+                    "Verde"
+                ]
+            },
+             {
+                "name": "Color base", 
+                "options": [
+                    "Blanco",
+                    "Rojo",
+                    "Negro",
+                    "Azul",
+                    "Verde"
+                ]
+            }, {
+                "name": "Color Ruedas",
+                "options": [
+                    "Blanco",
+                    "Rojo",
+                    "Negro",
+                    "Azul",
+                    "Verde"
+                ]
+            }
+        ]
     }
 ]
